@@ -108,6 +108,24 @@ const Calendar = ({
     });
   };
 
+  useEffect(() => {
+    if (!value) {
+      return;
+    }
+    if (
+      !!activeDate &&
+      activeDate.year === value.year &&
+      activeDate.month === value.month &&
+      activeDate.day === value.day
+    ) {
+      return;
+    }
+    setMainState({
+      ...mainState,
+      activeDate: shallowClone(value),
+    });
+  }, [value]);
+
   return (
     <div
       className={`Calendar -noFocusOutline ${calendarClassName} -${isRtl ? 'rtl' : 'ltr'}`}

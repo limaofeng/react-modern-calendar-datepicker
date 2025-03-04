@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "index.d.ts",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --host 0.0.0.0 --mode development",
     "lint": "concurrently \"eslint src\" \"prettier --check \"./src/**/*.css\"\" ",
     "lint:write": "prettier --write \"./src/**/*.js\"  \"./src/**/*.css\"",
     "test": "jest ./test --coverage",
